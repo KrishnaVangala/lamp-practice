@@ -17,9 +17,16 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-mysql_service 'foo' do
-    port '3306'
-    version '5.5'
-    initial_root_password 'change me'
+# Load MySQL password from the Data bags
+passwords = data_bag_item('passwords','mysql')
+
+# Configure the MYSQL client.
+mysql_client 'default' do
+    action :create
+end
+
+# Configure The MySql service.
+mysql_service 'default' do
+    initial_root_password passwords['root_password']
     action [:create, :start]
 end
