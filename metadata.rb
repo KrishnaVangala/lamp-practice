@@ -6,8 +6,12 @@ description 'Installs/Configures lamp'
 long_description 'Installs/Configures lamp'
 version '0.1.0'
 chef_version '>= 12.1' if respond_to?(:chef_version)
+supports 'ubuntu'
+
 depends 'httpd', '~> 0.4'
 depends 'mysql', '~> 8.0'
+depends 'mysql2_chef_gem', '~>2.0'
+depends 'database', '~>6.1'
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
