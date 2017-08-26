@@ -30,3 +30,32 @@ mysql_service 'default' do
     initial_root_password passwords['root_password']
     action [:create, :start]
 end
+
+# Install the Mysql2 Ruby gem
+mysql_chef_gem 'default' do
+    action :Install
+end
+
+# Connection to SQL
+
+mysql_connection_info = {
+    host: '127.0.0.1',
+    username: 'root',
+    password: passwords['root_password']
+}
+
+# create the database instance
+
+mysql_database node['lamp']['database']['dbname'] do
+    connection mysql_connection_info
+    action :create
+end
+
+# add a DB user
+mysql_database_user node['lamp']['database']['admin_username'] do
+    connection mysql_connection_info
+    password passwords['admin_password']
+    database_name node['lamp']['database']['dbname']
+    host '127.0.0.1'
+    action [:create, :grant]
+end
