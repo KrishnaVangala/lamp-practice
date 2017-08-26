@@ -25,3 +25,4 @@ end
 # Now include web recipe
 
 include_recipe 'lamp::web'
+include_recipe 'lamp::database'
