@@ -17,3 +17,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+mysql_service 'foo' do
+    port '3306'
+    version '5.5'
+    initial_root_password 'change me'
+    action [:create, :start]
+end
