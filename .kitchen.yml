@@ -16,9 +16,7 @@ verifier:
 
 platforms:
   - name: ubuntu-16.04
-  - name: centos-7.3
-    driver_config:
-      run_command: /usr/lib/systemd/systemd
+     
 suites:
   - name: default
     run_list:
