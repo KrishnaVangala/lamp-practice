@@ -18,17 +18,17 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # We Create a document root directory
-
+# Create the document root directory.
 directory node['lamp']['web']['document_root'] do
     recursive true
-end
-
-# Create a config file from the template created
+  end
+  
+# Add the site configuration.
 httpd_config 'default' do
     source 'default.conf.erb'
 end
-
-# Install the Apache and Start the service
+  
+  # Install Apache and start the service.
 httpd_service 'default' do
     mpm 'prefork'
     action [:create, :start]
