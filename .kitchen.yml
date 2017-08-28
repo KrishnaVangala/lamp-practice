@@ -3,6 +3,9 @@ driver:
   name: docker
   privileged: true
   use_sudo: false
+  network:
+    - ["private_network", {ip: "192.168.34.34"}]
+
 
 provisioner:
   name: chef_zero
