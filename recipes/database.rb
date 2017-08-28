@@ -33,7 +33,7 @@ end
 
 # Install the Mysql2 Ruby gem
 mysql2_chef_gem 'default' do
-    action :Install
+    action :install
 end
 
 # Connection to SQL
