@@ -19,7 +19,7 @@ platforms:
      
 suites:
   - name: default
-    data_bags_path: test/fixture/default/data_bags
+    data_bags_path: test/fixtures/default/data_bags
     run_list:
       - recipe[lamp::default]
     verifier:

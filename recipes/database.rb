@@ -18,7 +18,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Load MySQL password from the Data bags
-passwords = data_bag_item('passwords','mysql')
+passwords = data_bag_item('passwords', 'mysql')
 
 # Configure the MYSQL client.
 mysql_client 'default' do
