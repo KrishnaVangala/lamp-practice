@@ -39,7 +39,7 @@ end
 # Connection to SQL
 
 mysql_connection_info = {
-    host: 'localhost',
+    host: '127.0.0.1',
     username: 'root',
     password: passwords['root_password']
   }
@@ -56,6 +56,6 @@ mysql_database_user node['lamp']['database']['admin_username'] do
     connection mysql_connection_info
     password passwords['admin_password']
     database_name node['lamp']['database']['dbname']
-    host 'localhost'
+    host '127.0.0.1'
     action [:create, :grant]
 end
