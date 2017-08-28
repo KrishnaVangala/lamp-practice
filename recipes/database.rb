@@ -42,7 +42,7 @@ mysql_connection_info = {
     host: '127.0.0.1',
     username: 'root',
     password: passwords['root_password']
-}
+  }
 
 # create the database instance
 
