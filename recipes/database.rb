@@ -32,7 +32,7 @@ mysql_service 'default' do
 end
 
 # Install the Mysql2 Ruby gem
-mysql_chef_gem 'default' do
+mysql2_chef_gem 'default' do
     action :Install
 end
 
